@@ -1,13 +1,25 @@
-import React from 'react';
+import React, {Component} from 'react';
+import { connect } from 'react-redux'
+import { handleInitialData } from '../actions/shared'
+import UserPicker from './UserPicker'
 
-function App() {
-  return (
-    <div>
-      <div className='question'>
-        <p>Hello World.</p>
+class App extends Component {
+  componentDidMount () {
+    this.props.dispatch(handleInitialData())
+  }
+
+  render () {
+    return (
+      <div>
+        <div className='question'>
+          <p>Hello World.</p>
+        </div>
+        <UserPicker />
       </div>
-    </div>
-  );
+    )
+  }
 }
 
-export default App;
+
+
+export default connect()(App)

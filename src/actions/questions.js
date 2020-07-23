@@ -1,7 +1,7 @@
 import { 
   saveQuestion, 
   saveQuestionAnswer 
-} from '../../utils/api'
+} from '../utils/api'
 
 export const RECEIVE_QUESTIONS = 'RECEIVE_QUESTIONS'
 export const ADD_QUESTION = 'ADD_QUESTION'

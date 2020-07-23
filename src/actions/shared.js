@@ -1,7 +1,7 @@
 import { receiveUsers } from '../actions/users'
 import { receiveQuestions } from '../actions/questions'
 import { setCurrentUser } from '../actions/currentUser'
-import { handleInitialData } from '../../utils/api'
+import { getInitialData } from '../utils/api'
 
 const DEFAULT_USER = 'tylermcginnis'
 
