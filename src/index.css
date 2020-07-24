@@ -49,3 +49,8 @@ code {
   margin: auto;
   text-align: center;
 }
+
+.users {
+  list-style: none;
+  padding: 0;
+}

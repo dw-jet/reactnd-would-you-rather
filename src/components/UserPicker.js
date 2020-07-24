@@ -6,9 +6,11 @@ class UserPicker extends Component {
   render() {
     return (
       <div>
-        {this.props.userNames.map((u) => (
-          <User id={u} />
-        ))}
+        <ul className='users'>
+          {this.props.userNames.map((u) => (
+            <User key={u} id={u} />
+          ))}
+        </ul>
       </div>
     )
   }

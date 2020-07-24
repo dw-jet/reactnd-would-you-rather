@@ -11,13 +11,14 @@ class User extends Component {
 
   render() {
     const { id } = this.props
-    console.log(this.props)
     return (
+      <li>
         <button className='options' onClick={this.handleUserChoice}>
           <div>
             {id}
           </div>
         </button>
+      </li>
       )
     }
   }
