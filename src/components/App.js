@@ -11,10 +11,8 @@ class App extends Component {
   render () {
     return (
       <div>
-        <div className='question'>
-          <p>Hello World.</p>
-        </div>
-        <UserPicker />
+        <h1>Identify yourself</h1>
+          <UserPicker />
       </div>
     )
   }

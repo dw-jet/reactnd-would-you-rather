@@ -1,16 +1,15 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+import User from './User'
 
 class UserPicker extends Component {
   render() {
     return (
-      <ul>
+      <div>
         {this.props.userNames.map((u) => (
-          <li key={u}>
-            {u}
-          </li>
+          <User id={u} />
         ))}
-      </ul>
+      </div>
     )
   }
 }
