@@ -19,8 +19,8 @@ class User extends Component {
           </div>
         </button>
       </li>
-      )
-    }
+    )
   }
+}
 
 export default connect()(User)
