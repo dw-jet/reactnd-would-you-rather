@@ -5,7 +5,6 @@ import Poll from './Poll'
 class PollsList extends Component {
   render() {
     const {questionIds} = this.props
-    console.log(this.props)
     return (
       <ul>
         {questionIds.map((id) => (
@@ -18,9 +17,19 @@ class PollsList extends Component {
   }
 }
 
-function mapStateToProps({questions}) {
+function filterAnswered(questions, answers) {
+  return Object.keys(questions).filter(q => answers.includes(q))
+}
+
+function filterUnanswered(questions, answers) {
+  return Object.keys(questions).filter(q => !answers.includes(q))
+}
+
+function mapStateToProps({currentUser, users, questions}) {
+  const answers = currentUser ? Object.keys(users[currentUser].answers) : []
+  const filtered = filterUnanswered(questions, answers)
   return {
-    questionIds: Object.keys(questions)
+    questionIds: filtered
       .sort((a,b) => questions[b].timestamp - questions[a].timestamp)
   }
 }
