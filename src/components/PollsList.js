@@ -17,17 +17,9 @@ class PollsList extends Component {
   }
 }
 
-function filterAnswered(questions, answers) {
-  return Object.keys(questions).filter(q => answers.includes(q))
-}
-
-function filterUnanswered(questions, answers) {
-  return Object.keys(questions).filter(q => !answers.includes(q))
-}
-
-function mapStateToProps({currentUser, users, questions}) {
+function mapStateToProps({currentUser, users, questions}, {filter}) {
   const answers = currentUser ? Object.keys(users[currentUser].answers) : []
-  const filtered = filterUnanswered(questions, answers)
+  const filtered = filter(questions, answers)
   return {
     questionIds: filtered
       .sort((a,b) => questions[b].timestamp - questions[a].timestamp)
