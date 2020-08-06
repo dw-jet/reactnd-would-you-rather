@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import { handleInitialData } from '../actions/shared'
 import UserPicker from './UserPicker'
 import Dashboard from './Dashboard'
+import PollPage from './PollPage'
 
 class App extends Component {
   componentDidMount () {
@@ -12,7 +13,7 @@ class App extends Component {
   render () {
     return (
       <div className='container'>
-        <Dashboard />
+        <PollPage id='xj352vofupe1dqz9emx13r' />
       </div>
     )
   }
